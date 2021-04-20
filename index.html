@@ -8,6 +8,60 @@
 </head>
 
 <body>
-    test
+
+    <div class="wrapper">
+        <div class="heading">
+          <h1>Honey Moon</h1>
+        </div>
+
+        <div class="maincontent">
+            <div>
+              <!-- Input ton prénom -->
+              <label for="yourname">Ton prénom</label><br />
+              <input
+                type="text"
+                id="yourname"
+                placeholder="Entre ton prénom"
+                spellcheck="false"
+                maxlength="30"
+                required
+              />
+            </div>
+            <div>
+
+              <!-- Input son prénom -->
+              <label for="theirname">Son prénom</label><br />
+              <input
+                type="text"
+                id="theirname"
+                placeholder="Entre son prénom"
+                spellcheck="false"
+                maxlength="30"
+                required
+              />
+            </div>
+          </div>
+          <button type="submit"> Découvrir le résultat</button>
+    
+          <div class="result">
+            <h2>Résultat</h2>
+            <div class="divider"></div>
+            <p id="Vous êtes amoureux à"></p>
+            <h1 id="score"></h1>
+            <p id="loveinfo"></p>
+            <p
+              id="reload"
+              style="
+                cursor: pointer;
+                display: none;
+                margin-top: 30px;
+                font-weight: 700;
+              "
+              onClick="window.location.reload();"
+            >
+              ↺ Recommencer le test
+            </p>
+          </div>
+        </div>
 </body>
 </html>
