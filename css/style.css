@@ -1,0 +1,139 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    min-height: 100%;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    transition: 0.3s;
+    font-size: 18px;
+  }
+  
+    .m-backgroundAnimations {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        --gradient-step-1: 11;
+        --gradient-step-2: 73;
+        --gradient-step-3: 100;
+        background: linear-gradient(180deg, var(--gradient-color-1) calc(1% * var(--gradient-step-1)), var(--gradient-color-2) calc(1% * var(--gradient-step-2)), var(--gradient-color-3) calc(1% * var(--gradient-step-3)));
+    }
+
+    .m-backgroundAnimations_noise {
+        position: absolute;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        mix-blend-mode: multiply;
+    }
+  
+  h1 {
+    color: #fff;
+    font-size: 4rem;
+    font-family: "Cocogoose";
+  }
+  
+  /* Wrapper Section */
+  
+  .wrapper {
+    height: 100%;
+    color: #fff;
+    padding: 50px;
+  }
+  
+  .maincontent {
+    display: flex;
+    margin: 100px auto 20px auto;
+    text-align: center;
+    flex-flow: row;
+    justify-content: center;
+  }
+  
+  label {
+    font-weight: 600;
+  }
+  
+  .maincontent input {
+    width: 350px;
+    height: 50px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: 2px solid #ffffff;
+    border-radius: 50px;
+    color: #ffffff;
+    outline: none;
+    padding: 20px;
+    font-size: 20px;
+    justify-content: space-between;
+    margin: 10px;
+    text-align: center;
+    text-transform: capitalize;
+    box-shadow: 0 10px 23px 10px #00000020;
+  }
+  
+  .maincontent input:focus {
+    width: 450px;
+    background-color: #fff;
+    color: #ff4136;
+    transition: 0.3s;
+    font-weight: 700;
+  }
+  
+  .maincontent input:valid {
+    background-color: #fff;
+    color: #ff4136;
+    transition: 0.3s;
+    font-weight: 700;
+  }
+  
+  ::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 18px;
+    text-align: center;
+  }
+  
+  button {
+    background-color: #ffffff;
+    border: 2px solid #ffffff;
+    border-radius: 50px;
+    color: #ff4136;
+    padding: 15px 30px;
+    outline: none;
+    cursor: pointer;
+    font-size: 18px;
+    transition: 0.3s;
+    font-weight: 600;
+    box-shadow: 0 10px 23px 10px #00000020;
+  }
+  button:hover {
+    background-color: transparent;
+    border: 2px solid #ffffff;
+    color: #ffffff;
+  }
+  
+  .result {
+    width: 50%;
+    margin: 100px auto;
+  }
+  
+  .result h1 {
+    font-family: "Montserrat", sans-serif;
+    padding: 10px;
+  }
+  .divider {
+    width: 200px;
+    height: 2px;
+    background-color: #fff;
+    text-align: center;
+    margin: 10px auto;
+  }
+  
+  #loveinfo {
+    line-height: 1.5;
+  }
