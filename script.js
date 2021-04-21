@@ -1,21 +1,62 @@
-var unirest = require("unirest");
+/*fetch("https://love-calculator.p.rapidapi.com/getPercentage?fname="+mavARIABLE1"&sname=" +VARIABLE2, {
+	"method": "GET",
+	"headers": {
+		"x-rapidapi-key": "2825444912msh860fd3c75e79e06p1fb70ejsn604c80514e71",
+		"x-rapidapi-host": "love-calculator.p.rapidapi.com"
+	}
+})
+.then(response => {
+	console.log(response);
+})
+.catch(err => {
+	console.error(err);
+}); */
 
-var req = unirest("GET", "https://love-calculator.p.rapidapi.com/getPercentage");
+function init () {
+    var canvas = document.getElementById("canvas");
+    var ctx = canvas.getContext("2d");
+    console.log(ctx);
+    var w = canvas.width;
+    var h = canvas.height;
 
-req.query({
-	"fname": "John",
-	"sname": "Alice"
-});
+   // var bg = new Image();
+   // bg.src = "../img/rose-318d4b03196e7b61af1c3587d977ef2b.png";
 
-req.headers({
-	"x-rapidapi-key": "2825444912msh860fd3c75e79e06p1fb70ejsn604c80514e71",
-	"x-rapidapi-host": "love-calculator.p.rapidapi.com",
-	"useQueryString": true
-});
+    var flakes = [];
 
+    function snowfall () {
+        ctx.clearRect(0, 0, w, h);
+       // ctx.drawImage(bg, 0, 0);
+        addFlake();
+        snow();
+    };
 
-req.end(function (res) {
-	if (res.error) throw new Error(res.error);
+    function addFlake () {
+        var x = Math.ceil(Math.random() * w);
+        var s = Math.ceil(Math.random() * 50);
+        flakes.push({"x": x, "y": 0, "s": s});
+    };
 
-	console.log(res.body);
-});
+    function snow () {
+        for (var i = 0; i < flakes.length; i++) {
+            var flake = flakes[i];
+            ctx.beginPath();
+           // ctx.fillStyle = "rgba(255, 255, 255, 0.7)";
+            var img = new Image();
+            img.src = "img/rose-318d4b03196e7b61af1c3587d977ef2b.png";
+            //var img = "img/rose-318d4b03196e7b61af1c3587d977ef2b.png";
+            var pat = ctx.createPattern(img, "repeat");
+           // ctx.rect(0, 0, 10, 5);
+            ctx.fillStyle = pat;
+            
+            ctx.arc(flake.x, flakes[i].y+=flake.s/2, flake.s/2, 0, 2 * Math.PI);
+            ctx.fill();
+            if(flakes[i].y > h){
+                flakes.splice(i, 1);
+            }
+        };
+    };
+
+    setInterval(snowfall, 100);
+};
+window.onload = init;

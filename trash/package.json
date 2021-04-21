@@ -1,0 +1,19 @@
+{
+  "name": "honeymoon",
+  "version": "1.0.0",
+  "description": "first npm projet honeymoon",
+  "main": "node.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/louannethiery/honey-moon.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/louannethiery/honey-moon/issues"
+  },
+  "homepage": "https://github.com/louannethiery/honey-moon#readme"
+}
