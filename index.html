@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
     <title>Honey-Moon</title>
 </head>
 
@@ -14,8 +15,13 @@
     </div>
 
     <div class="wrapper">
+
+        <div class="logo">
+            <img class="logo_app" src="../honey-moon-master/img/logo_white_large.png" >
+        </div>
+
         <div class="heading">
-            <h1>Honey Moon</h1>
+            <h3>Calculez vos chances d'une relation réussie</h3>
         </div>
 
         <div class="maincontent">
@@ -25,8 +31,10 @@
                 <input type="text" id="yourname" placeholder="Entre ton prénom" spellcheck="false" maxlength="30" required />
             </div>
 
+            <img class="m-names__content__form__and" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGZpbGw9Im5vbmUiIHZpZXdCb3g9IjAgMCA2NCA1OSI+PHBhdGggZmlsbD0iI2ZmZiIgZD0iTTI0LjYyIDI4LjkzYzAgOCAyLjU5IDE0LjY1IDcuNjcgMTkuNyA0LjAyLTMuMDUgNy02LjM4IDkuNjctMTEuMTRsLS40OC0uNTdjLTMuMjUtMy4yMy00LjExLTQuODUtNC4xMS02Ljk0IDAtMy42MiAyLjMtNS40MyA2Ljk5LTUuNDNoNC4wMmMxLjgyLTMuOCAzLjA3LTYgNC4yMi03LjQyIDEuNjMtMiAzLjc0LTMuMjQgNS42NS0zLjI0IDEuNjMgMCAyLjg4IDEuMDUgMi44OCAyLjQ4IDAgMS4wNC0uNTggMS44LTIuMDIgMi43Ni0yLjY4IDEuOS0zLjU0IDIuODUtNC45OCA1LjUyaC45NmMxLjcyIDAgMi41LS4xIDQuMzEtLjI5IDEuNDQtLjI4IDIuMS0uMjggMi41LS4yOCAxLjI0IDAgMi4xLjc2IDIuMSAyIDAgMi0xLjcyIDMuMTMtNC42IDMuMTMtLjY3IDAtMi4xLS4xLTMuMjYtLjFoLTQuMzFsLS40OC45NmMtLjI4LjU3LS42NyAxLjMzLTEuMTUgMi4xOWwtMS4wNSAyLS44NiAxLjgtLjM5Ljc3YzQuMjIgNC4wOSA1LjY2IDYuNzUgNS42NiAxMC40NyAwIDUuOC01LjM3IDEwLjc1LTExLjYgMTAuNzUtMy4xNiAwLTYuMzItMS4wNS05Ljc3LTMuMDUtNS4zNiAyLjc2LTkuODcgNC0xNC40NyA0QzcuNjYgNTkgMCA1Mi4yNCAwIDQzLjJjMC01LjUyIDIuNzgtMTAuNDYgOC4zNC0xNC41NiAyLjM5LTEuOCA1LjA3LTMuMzMgMTAuMDYtNS42MWwxLjM0LS42N0EzNS4xOCAzNS4xOCAwIDAxMjUuNzcgOC4xQzI5LjQxIDMuMDUgMzQuNSAwIDM5LjI4IDBjNC44IDAgOC40MyAzLjUyIDguNDMgNy45IDAgNS4zMy00LjcgOS44LTE1LjE0IDE0LjM3bC02LjcgMi44NXMtLjQ4LjItMS4wNi40OGMtLjE5IDEuNTItLjE5IDIuMjgtLjE5IDMuMzN6bS01LjQ2LS43NmwtMS41My44NUM4LjcyIDMzLjcgNS40NiAzNy41IDUuNDYgNDMuMmMwIDYuMTkgNC44OSAxMC44NSAxMS41IDEwLjg1IDMuNDUgMCA3LS45NSAxMC43My0yLjY2LTUuNjUtNi4xLTguNDMtMTMuNjEtOC41My0yMy4yMnptMTguMDEtMTQuMDljMy4yNi0xLjkgNC45OS00LjA5IDQuOTktNiAwLTEuOC0xLjU0LTMuMjMtMy41NS0zLjIzLTQuNiAwLTEwLjA2IDYuMjgtMTIuNjUgMTQuNzUgMy43NC0xLjUyIDguMDUtMy43IDExLjIxLTUuNTJ6bS0uNTcgMzcuNzhhOS4xNiA5LjE2IDAgMDA1LjA4IDEuNDNjNC4wMiAwIDcuMDktMi43NiA3LjA5LTYuNDcgMC0xLjktLjg3LTMuNTItMy4wNy01LjktMi45NyA1LjE0LTQuOTggNy43LTkuMSAxMC45NHptOC4yNC0yMi44NGMtMi41IDAtMy4yNi4yOS0zLjI2IDEuMzQgMCAuNjYuOTYgMS45IDIuNSAzLjE0YTQ3LjY1IDQ3LjY1IDAgMDAyLjItNC40OGgtMS40NHoiLz48L3N2Zz4=" alt="&amp;">
+
             <div> <!-- Input son prénom -->
-                <label for="theirname">Son prénom</label><br />
+                <label for="theirname">Le prénom de ton/ta crush</label><br />
                 <input type="text" id="theirname" placeholder="Entre son prénom" spellcheck="false" maxlength="30" required />
             </div>
         </div>
@@ -35,12 +43,16 @@
 
         <div class="result">
             <h2>Résultat</h2>
-            <div class="divider"></div>
             <p id="Vous êtes amoureux à"></p>
             <h1 id="score"></h1>
             <p id="loveinfo"></p>
             <p id="reload" style="cursor: pointer; display: none; margin-top: 30px; font-weight: 700;" onClick="window.location.reload();"> ↺ Recommencer le test</p>
         </div>
+
+        <footer class="m-footer">
+            <span class="m-footer__wrapper__copyright">© 2021 CODE SPRINT</span>
+         </footer>
+
     </div>
 
 </body>

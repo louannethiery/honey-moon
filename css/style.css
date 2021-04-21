@@ -26,6 +26,7 @@
 
     .m-backgroundAnimations_noise {
         position: absolute;
+        z-index: 1;
         height: 100vh;
         top: 0;
         left: 0;
@@ -33,31 +34,46 @@
         bottom: 0;
         mix-blend-mode: multiply;
     }
-  
-  h1 {
-    color: #fff;
-    font-size: 4rem;
-    font-family: "Cocogoose";
+
+    .logo_app{
+        width: 150px;
+    }
+
+    .heading{
+        height: 100px;
+        padding-top: 40px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        border-bottom: #fff 1.5px solid;
+        border-top: #fff 1.5px solid;
+    }
+
+  h3 {
+      font-size: 1.2rem;
+      color: #fff;
+      font-family: "Cocogoose";
   }
   
   /* Wrapper Section */
   
   .wrapper {
     height: 100%;
+    z-index: 2;
+    position: relative;
     color: #fff;
-    padding: 50px;
   }
   
   .maincontent {
     display: flex;
-    margin: 100px auto 20px auto;
+    margin: 70px auto 20px auto;
     text-align: center;
     flex-flow: row;
     justify-content: center;
   }
   
   label {
-    font-weight: 600;
+    font-weight: 400;
+    font-size: 20px;
   }
   
   .maincontent input {
@@ -65,7 +81,7 @@
     height: 50px;
     background-color: rgba(255, 255, 255, 0.5);
     border: 2px solid #ffffff;
-    border-radius: 50px;
+    border-radius: 5px;
     color: #ffffff;
     outline: none;
     padding: 20px;
@@ -74,7 +90,7 @@
     margin: 10px;
     text-align: center;
     text-transform: capitalize;
-    box-shadow: 0 10px 23px 10px #00000020;
+    box-shadow: 0 7px 23px 7px #00000020;
   }
   
   .maincontent input:focus {
@@ -91,18 +107,23 @@
     transition: 0.3s;
     font-weight: 700;
   }
+
+  .m-names__content__form__and {
+    height: 59px;
+    margin: 28px 20px;
+}
   
   ::placeholder {
-    color: rgba(255, 255, 255, 0.5);
+    color: rgba(255, 255, 255, 0.658);
     font-size: 18px;
     text-align: center;
   }
   
   button {
-    background-color: #ffffff;
     border: 2px solid #ffffff;
-    border-radius: 50px;
-    color: #ff4136;
+    color: #ffffff;
+    border-radius: 5px;
+    background-color: transparent;
     padding: 15px 30px;
     outline: none;
     cursor: pointer;
@@ -111,20 +132,25 @@
     font-weight: 600;
     box-shadow: 0 10px 23px 10px #00000020;
   }
+
   button:hover {
-    background-color: transparent;
-    border: 2px solid #ffffff;
     color: #ffffff;
-  }
+    border: 2px solid #ffffff;
+    background-color: rgba(255, 255, 255, 0.5);
+}
   
   .result {
-    width: 50%;
-    margin: 100px auto;
+    margin: 80px auto;
+    margin-bottom:30px;
+    padding-top: 20px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border-top: #fff 1.5px solid;
   }
   
   .result h1 {
     font-family: "Montserrat", sans-serif;
-    padding: 10px;
+    padding-top: 100px;
   }
   .divider {
     width: 200px;
@@ -137,3 +163,16 @@
   #loveinfo {
     line-height: 1.5;
   }
+
+  .m-footer {
+    height: 50px;
+    border-top: 1.5px solid #fff;
+    text-transform: uppercase;
+    font-size: 14px;
+    line-height: 2.43em;
+    padding-left: 20px;
+    letter-spacing: -0.03em;
+    position: relative;
+    display: flex;
+}
+
