@@ -176,12 +176,20 @@
     display: flex;
 }
 
-
-#canvas{
-  position: absolute;
-  z-index: 2;
-  width: 100%;
-  height: 100%;
-  top: 0%;
-  left: 0%;
+.dot{
+    width:80px;
+    height:80px;
+    position:absolute;
+    background: url(https://duolovesongs.byspotify.com/_next/static/images/rose-318d4b03196e7b61af1c3587d977ef2b.png);
+    background-size: 100% 100%;
+  }
+  
+  #container {
+    width:100%; 
+    height:100%; 
+    position: absolute;
 }
+  
+  
+
+  
