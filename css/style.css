@@ -150,8 +150,9 @@
   
   .result h1 {
     font-family: "Montserrat", sans-serif;
-    padding-top: 100px;
+    padding-top: 2%;
   }
+  
   .divider {
     width: 200px;
     height: 2px;
@@ -189,7 +190,4 @@
     height:100%; 
     position: absolute;
 }
-  
-  
-
-  
+ 
