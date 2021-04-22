@@ -1,4 +1,5 @@
-document.getElementById("result").style.display = "none";
+document.getElementById("result").style.visibility = "hidden";
+
 
 // Api LOVE
 function match(){
@@ -28,7 +29,7 @@ function match(){
 	    //console.log(response);
 
       //Faire apparaitre le Résultat :
-        document.getElementById("result").style.display = "block";
+        document.getElementById("result").style.visibility = "visible";
         document.getElementById("score").innerText = response.percentage+"%" ;
         document.getElementById("loveinfo").innerText = response.result ;
 
@@ -58,6 +59,30 @@ function match(){
             requestAnimationFrame(frame);
           }
         }()); 
+      }else{
+        fetch("https://giphy.p.rapidapi.com/v1/gifs/search?api_key=dc6zaTOxFJmzC&q=alone&limit=1", {
+	        "method": "GET",
+	        "headers": {
+		      "x-rapidapi-key": "2825444912msh860fd3c75e79e06p1fb70ejsn604c80514e71",
+		      "x-rapidapi-host": "giphy.p.rapidapi.com"
+	      }
+        })
+        .then(response =>response.json())
+        .then(response => {
+	        // console.log(response);
+          document.getElementById("gif1").innerText = response.embed_url ;
+
+          //let gif1 = response.embed_url
+          //console.log(gif1)
+         // $("#gif1").attr("embed_url", gif1);
+
+
+
+
+        })
+        .catch(err => {
+      	  console.error(err);
+        });
       } 
     })
     .catch(err => {
