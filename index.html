@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/style.css" />
     <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
     <title>Honey-Moon</title>
 </head>
 
@@ -45,9 +46,12 @@
             </div>
         </div>
 
-        <button type="submit" onclick="match()">Discover the result</button>
+        <button type="submit" id="btnSearch" onclick="match()">Discover the result</button>
 
         <div id="result" class="result">
+            <div class="giff" >
+                <img id="gif1" src="" alt="">
+            </div>
             <h2>Result</h2>
             <p id="">You are in love with</p>
             <h1 id="score"></h1>

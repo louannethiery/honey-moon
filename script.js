@@ -1,17 +1,15 @@
 document.getElementById("result").style.display = "none";
 
-
-
 // Api LOVE
 function match(){
     var saisie1 =document.getElementById("yourname").value;
     var saisie2 =document.getElementById("theirname").value;
 
     if (saisie1 == "") { 
-	    alert("Vous ne trouverez pas l'amour tout(e) seul(e)"); 
+	    alert("You won't find love alone"); 
 	    return false; 
 	}if (saisie2 == "") { 
-	    alert("Il/Elle ne trouvera pas l'amour tout(e) seul(e)"); 
+	    alert("He/She will not find love alone");; 
 	    return false; 
     }
 
@@ -27,17 +25,46 @@ function match(){
     })
     .then(response =>response.json())
     .then(response => {
-	    console.log(response);
+	    //console.log(response);
+
+      //Faire apparaitre le Résultat :
         document.getElementById("result").style.display = "block";
         document.getElementById("score").innerText = response.percentage+"%" ;
         document.getElementById("loveinfo").innerText = response.result ;
-        
-        
+
+
+      // Faire apparaitre l'animation confetti :
+      if (response.percentage >= 60) {
+        var end = Date.now() + (15 * 1000);
+        var colors = ['#bb0000', '#ffffff'];
+
+        (function frame() {
+          confetti({
+            particleCount: 2,
+            angle: 60,
+            spread: 55,
+            origin: { x: 0 },
+            colors: colors
+          });
+          confetti({
+            particleCount: 2,
+            angle: 120,
+            spread: 55,
+            origin: { x: 1 },
+            colors: colors
+          });
+
+          if (Date.now() < end) {
+            requestAnimationFrame(frame);
+          }
+        }()); 
+      } 
     })
     .catch(err => {
 	    console.error(err);
     });
 }
+
 
 // Animation rose
 var falling = true;

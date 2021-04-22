@@ -191,3 +191,14 @@
     position: absolute;
 }
  
+.giff {
+  position: fixed;
+  width: 100%;
+  vertical-align: middle;
+  text-align: center;
+}
+
+img#gif1 {
+  vertical-align: middle;
+  width: 600px;
+}
