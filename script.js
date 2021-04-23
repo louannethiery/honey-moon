@@ -60,26 +60,35 @@ function match(){
           }
         }()); 
       }else{
-        fetch("https://giphy.p.rapidapi.com/v1/gifs/search?api_key=dc6zaTOxFJmzC&q=alone&limit=1", {
+        fetch("https://api.giphy.com/v1/gifs/random?api_key=Ywoh06QC87SD53OtIyyhhxyzM7MZKSAl&tag=lonely&limit=1")
+        .then(response => response.json())
+        .then(response => {
+        console.log(response)
+            let gif1 = response.data.image_original_url
+            console.log(gif1)
+            $("#gif1").attr("src", gif1);
+        })
+        /*fetch("https://giphy.p.rapidapi.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=alone", {
 	        "method": "GET",
 	        "headers": {
-		      "x-rapidapi-key": "2825444912msh860fd3c75e79e06p1fb70ejsn604c80514e71",
-		      "x-rapidapi-host": "giphy.p.rapidapi.com"
-	      }
+		        "x-rapidapi-key": "2825444912msh860fd3c75e79e06p1fb70ejsn604c80514e71",
+		        "x-rapidapi-host": "giphy.p.rapidapi.com"
+	        }
         })
         .then(response =>response.json())
         .then(response => {
-	        // console.log(response);
-          document.getElementById("gif1").innerText = response.embed_url ;
+	        console.log(response);
+          document.getElementById("gif1").innerText = response.image_url ;
+          console.log(image_url)
 
-          //let gif1 = response.embed_url
+          //let gif1 = response.image_url
           //console.log(gif1)
-         // $("#gif1").attr("embed_url", gif1);
+         // $("#gif1").attr("image_url", gif1);
 
 
 
 
-        })
+        })*/
         .catch(err => {
       	  console.error(err);
         });
