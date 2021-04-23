@@ -35,7 +35,7 @@ function match(){
        
       // Si >=60 % :
       if (response.percentage >= 60) {
-
+        // Mettre à dispo un saignement d'oreille
         (function () {
           'use strict';
         
@@ -44,17 +44,17 @@ function match(){
           const context = new AudioContext();
           const playButton = document.querySelector('#play');
             
-          let yodelBuffer;
+          let loveBuffer;
         
           window.fetch(URL)
             .then(response => response.arrayBuffer())
             .then(arrayBuffer => context.decodeAudioData(arrayBuffer))
             .then(audioBuffer => {
               playButton.disabled = false;
-              yodelBuffer = audioBuffer;
+              loveBuffer = audioBuffer;
             });
             
-            playButton.onclick = () => play(yodelBuffer);
+            playButton.onclick = () => play(loveBuffer);
         
           function play(audioBuffer) {
             const source = context.createBufferSource();
@@ -63,11 +63,6 @@ function match(){
             source.start();
           }
         }());
-
-
-
-
-
 
         // Faire apparaitre l'animation confetti 
         var end = Date.now() + (15 * 1000);
@@ -92,10 +87,13 @@ function match(){
           if (Date.now() < end) {
             requestAnimationFrame(frame);
           }
-        }()); 
+        }());
+      // Si < 60% : 
       }else{
+        // Pas de musique de lover
         document.getElementById("play").style.display = "none";
 
+        // Gif lonely
         fetch("https://api.giphy.com/v1/gifs/random?api_key=Ywoh06QC87SD53OtIyyhhxyzM7MZKSAl&tag=lonely&limit=1")
         .then(response => response.json())
         .then(response => {
@@ -104,27 +102,6 @@ function match(){
             console.log(gif1)
             $("#gif1").attr("src", gif1);
         })
-        /*fetch("https://giphy.p.rapidapi.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=alone", {
-	        "method": "GET",
-	        "headers": {
-		        "x-rapidapi-key": "2825444912msh860fd3c75e79e06p1fb70ejsn604c80514e71",
-		        "x-rapidapi-host": "giphy.p.rapidapi.com"
-	        }
-        })
-        .then(response =>response.json())
-        .then(response => {
-	        console.log(response);
-          document.getElementById("gif1").innerText = response.image_url ;
-          console.log(image_url)
-
-          //let gif1 = response.image_url
-          //console.log(gif1)
-         // $("#gif1").attr("image_url", gif1);
-
-
-
-
-        })*/
         .catch(err => {
       	  console.error(err);
         });

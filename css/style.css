@@ -148,7 +148,7 @@
   
   .result h1 {
     font-family: "Montserrat", sans-serif;
-    padding-top: 2%;
+    padding-top: 1%;
   }
   
   .divider {
@@ -197,10 +197,11 @@
   max-height: 25%;
 }
 
-button:nth-child(2) {
-  border: 2px solid #ffffff;
-  color: #1c166d;
-  background-color: transparent;
-  padding: 15px 30px;
-  font-size: 18px;
+#play{
+  padding: 11px 30px;
+  margin-top : 1%;
+}
+
+#reload{
+  margin-top: 25px;
 }
