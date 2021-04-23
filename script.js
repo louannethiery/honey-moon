@@ -32,10 +32,44 @@ function match(){
         document.getElementById("result").style.visibility = "visible";
         document.getElementById("score").innerText = response.percentage+"%" ;
         document.getElementById("loveinfo").innerText = response.result ;
-
-
-      // Faire apparaitre l'animation confetti :
+       
+      // Si >=60 % :
       if (response.percentage >= 60) {
+
+        (function () {
+          'use strict';
+        
+          const URL = 'https://p.scdn.co/mp3-preview/91e6d3e0b48cda2f3a1b2391a1c1384fbf73b8a8?cid=774b29d4f13844c495f206cafdad9c86';
+            
+          const context = new AudioContext();
+          const playButton = document.querySelector('#play');
+            
+          let yodelBuffer;
+        
+          window.fetch(URL)
+            .then(response => response.arrayBuffer())
+            .then(arrayBuffer => context.decodeAudioData(arrayBuffer))
+            .then(audioBuffer => {
+              playButton.disabled = false;
+              yodelBuffer = audioBuffer;
+            });
+            
+            playButton.onclick = () => play(yodelBuffer);
+        
+          function play(audioBuffer) {
+            const source = context.createBufferSource();
+            source.buffer = audioBuffer;
+            source.connect(context.destination);
+            source.start();
+          }
+        }());
+
+
+
+
+
+
+        // Faire apparaitre l'animation confetti 
         var end = Date.now() + (15 * 1000);
         var colors = ['#bb0000', '#ffffff'];
 
@@ -60,6 +94,8 @@ function match(){
           }
         }()); 
       }else{
+        document.getElementById("play").style.display = "none";
+
         fetch("https://api.giphy.com/v1/gifs/random?api_key=Ywoh06QC87SD53OtIyyhhxyzM7MZKSAl&tag=lonely&limit=1")
         .then(response => response.json())
         .then(response => {
